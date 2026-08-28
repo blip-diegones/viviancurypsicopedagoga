@@ -99,7 +99,7 @@ export default function About() {
                   }}
                 >
                   <img
-                    src="/vivian.jpg"
+                    src="/vivian_profile.jpg"
                     alt="Vivian Cury — Psicopedagoga"
                     style={{
                       width: '100%',

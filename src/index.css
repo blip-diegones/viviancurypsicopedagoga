@@ -130,8 +130,18 @@ img, svg {
 
 /* Seções com Amplo Respiro Editorial */
 .section-spacious {
-  padding-top: 6.5rem;
-  padding-bottom: 6.5rem;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  scroll-margin-top: 7rem;
+}
+
+/* Respiro entre blocos para uma leitura mais calma e uma navegação mais clara */
+main > section + section {
+  border-top: 1px solid var(--border-subtle);
+}
+
+main > section:nth-of-type(even) {
+  background-color: var(--bg-subtle);
 }
 
 @media (max-width: 768px) {

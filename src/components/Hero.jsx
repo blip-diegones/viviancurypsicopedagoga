@@ -6,8 +6,8 @@ export default function Hero() {
   return (
     <section
       style={{
-        paddingTop: '8rem',
-        paddingBottom: '5.5rem',
+        paddingTop: '10.5rem',
+        paddingBottom: '7rem',
         position: 'relative',
         overflow: 'hidden'
       }}

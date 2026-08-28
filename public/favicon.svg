@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#FAF9F5" stroke="#E6E4DC" stroke-width="1.5"/>
+  <!-- Petals -->
+  <g fill="#E5AA2B">
+    <ellipse cx="32" cy="14" rx="4.5" ry="9" />
+    <ellipse cx="32" cy="50" rx="4.5" ry="9" />
+    <ellipse cx="14" cy="32" rx="9" ry="4.5" />
+    <ellipse cx="50" cy="32" rx="9" ry="4.5" />
+    <ellipse cx="19.3" cy="19.3" rx="4.5" ry="9" transform="rotate(-45 19.3 19.3)" />
+    <ellipse cx="44.7" cy="44.7" rx="4.5" ry="9" transform="rotate(-45 44.7 44.7)" />
+    <ellipse cx="44.7" cy="19.3" rx="4.5" ry="9" transform="rotate(45 44.7 19.3)" />
+    <ellipse cx="19.3" cy="44.7" rx="4.5" ry="9" transform="rotate(45 19.3 44.7)" />
+  </g>
+  <!-- Center circle & family embrace -->
+  <circle cx="32" cy="32" r="13" fill="#2E7993" />
+  <!-- Stylized figures -->
+  <circle cx="28.5" cy="28.5" r="2.8" fill="#FAF9F5" />
+  <circle cx="35.5" cy="27" r="3.2" fill="#FAF9F5" />
+  <path d="M25 36C25 33 27 31.5 29.5 31.5C31.5 31.5 32.5 33 32.5 36" stroke="#FAF9F5" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M32 36C32 32.5 33.5 30 36.5 30C39.5 30 40.5 32.5 40.5 36" stroke="#FAF9F5" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Leaves at bottom -->
+  <path d="M22 47C25 43 29 44 32 47C35 44 39 43 42 47" stroke="#256B82" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

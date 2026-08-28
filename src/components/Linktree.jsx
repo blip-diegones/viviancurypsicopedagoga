@@ -8,7 +8,8 @@ import {
   Users,
   ChevronRight,
   Share2,
-  Sparkles
+  Sparkles,
+  Heart
 } from 'lucide-react';
 
 export default function Linktree() {
@@ -25,7 +26,7 @@ export default function Linktree() {
       }
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('Link copiado para a área de transferência!');
+      alert('Link copiado com sucesso!');
     }
   };
 
@@ -38,7 +39,7 @@ export default function Linktree() {
       icon: Users,
       iconBg: '#EAF4EF',
       iconColor: '#245E44',
-      badge: 'Comunidade Gratuita'
+      badge: 'Gratuito'
     },
     {
       id: 'contato-whatsapp',
@@ -52,7 +53,7 @@ export default function Linktree() {
     {
       id: 'instagram-dicas',
       title: 'Me siga para melhores dicas',
-      subtitle: 'Conteúdos práticos no Instagram @vivianpsicopedagoga',
+      subtitle: 'Vídeos e práticas no Instagram @vivianpsicopedagoga',
       href: 'https://www.instagram.com/vivianpsicopedagoga/',
       icon: Instagram,
       iconBg: '#FDF0F4',
@@ -100,7 +101,7 @@ export default function Linktree() {
         }}
       >
         {/* Top bar with Share */}
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginBottom: '1.25rem' }}>
           <button
             onClick={handleShare}
             aria-label="Compartilhar"
@@ -129,13 +130,13 @@ export default function Linktree() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
-          style={{ textAlign: 'center', marginBottom: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          style={{ textAlign: 'center', marginBottom: '2.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
           {/* Avatar com Foto Real da Vivian */}
           <div
             style={{
-              width: '110px',
-              height: '110px',
+              width: '112px',
+              height: '112px',
               borderRadius: 'var(--radius-full)',
               overflow: 'hidden',
               border: '3px solid #FFFFFF',
@@ -172,7 +173,7 @@ export default function Linktree() {
             style={{
               fontSize: '0.94rem',
               color: 'var(--text-body)',
-              maxWidth: '400px',
+              maxWidth: '410px',
               lineHeight: 1.6,
               fontWeight: 400
             }}

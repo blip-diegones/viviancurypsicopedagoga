@@ -7,25 +7,29 @@ export default function ClinicGallery() {
       src: '/foto_quebracabeca.png',
       alt: 'Atividade com quebra-cabeças no tatame colorido',
       title: 'Concentração & Percepção Espacial',
-      caption: 'No chão e no tatame, a criança aprende a persistir, organizar estratégias e focar a atenção sem sobrecarga.'
+      tag: 'Atenção',
+      caption: 'No chão e no tatame, a criança aprende a persistir, organizar estratégias e focar a atenção sem sobrecarga sensorial.'
     },
     {
       src: '/foto_domino.png',
       alt: 'Jogo de dominó com cartas e animais educativos',
-      title: 'Linguagem, Associação & Raciocínio',
-      caption: 'Jogos estruturados com animais e números que transformam a alfabetização e a memória operacional em pura diversão.'
+      title: 'Linguagem & Associação Rápida',
+      tag: 'Alfabetização',
+      caption: 'Jogos estruturados com animais, cores e sons que estimulam o vocabulário, a memória e a consciência fonológica.'
     },
     {
       src: '/foto_matematica.png',
       alt: 'Atividade concreta de matemática com tampinhas e quadro Dezena/Unidade',
       title: 'Matemática Concreta (D/U)',
-      caption: 'Construção tátil de cálculos de soma e valor posicional. A criança visualiza o conceito e supera o medo dos números.'
+      tag: 'Raciocínio',
+      caption: 'Construção tátil de cálculos de soma e valor posicional. A criança visualiza o conceito e supera a insegurança com números.'
     },
     {
-      src: '/foto_tapacerto.png',
-      alt: 'Vivian Cury com o jogo Tapa Certo para agilidade mental e foco',
-      title: 'Agilidade Mental & Regulação',
-      caption: 'Jogos rápidos como Tapa Certo exercitam a velocidade de processamento, controle inibitório e tolerância à frustração.'
+      src: '/foto_torre_equilibrio.png',
+      alt: 'Crianças jogando torre de equilíbrio e foco no tatame',
+      title: 'Equilíbrio, Foco & Regulação Emocional',
+      tag: 'Autocontrole',
+      caption: 'Jogos de montagem e equilíbrio que exercitam o controle motor fino, o planejamento e ensinam a lidar com o erro com leveza.'
     }
   ];
 
@@ -47,7 +51,7 @@ export default function ClinicGallery() {
             Um olhar por dentro das sessões
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.08rem' }}>
-            Cada jogo e material no consultório tem uma intencionalidade pedagógica pensada para o ritmo do seu filho.
+            Cada jogo e material no consultório tem uma intencionalidade pedagógica pensada para o momento e o ritmo do seu filho.
           </p>
         </div>
 
@@ -77,7 +81,8 @@ export default function ClinicGallery() {
                   overflow: 'hidden',
                   backgroundColor: '#FFFFFF',
                   boxShadow: '0 8px 24px rgba(43, 18, 34, 0.08)',
-                  marginBottom: '1.25rem'
+                  marginBottom: '1.25rem',
+                  position: 'relative'
                 }}
               >
                 <img
@@ -87,6 +92,7 @@ export default function ClinicGallery() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center top',
                     transition: 'transform 0.4s ease'
                   }}
                   onMouseEnter={(e) => {
@@ -96,6 +102,25 @@ export default function ClinicGallery() {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '0.85rem',
+                    right: '0.85rem',
+                    backgroundColor: 'rgba(255, 255, 255, 0.94)',
+                    backdropFilter: 'blur(6px)',
+                    color: 'var(--color-primary)',
+                    fontSize: '0.74rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    padding: '0.25rem 0.65rem',
+                    borderRadius: 'var(--radius-full)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                  }}
+                >
+                  {photo.tag}
+                </span>
               </div>
 
               {/* Legenda e Conteúdo */}

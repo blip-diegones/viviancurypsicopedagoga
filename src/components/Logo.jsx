@@ -40,7 +40,7 @@ export default function Logo({ size = 'default', showText = true, className = ''
             fontFamily: 'var(--font-title)',
             fontWeight: 700,
             fontSize: size === 'large' ? '1.5rem' : '1.22rem',
-            color: 'var(--primary-deep)',
+            color: 'var(--color-primary)',
             letterSpacing: '-0.02em'
           }}>
             Vivian Cury

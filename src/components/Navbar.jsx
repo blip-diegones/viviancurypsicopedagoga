@@ -50,7 +50,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         {!isLinktree && (
-          <nav style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+          <nav style={{ display: 'none', alignItems: 'center', gap: '2.35rem', marginLeft: 'auto', marginRight: '2rem' }} className="desktop-nav">
             {navLinks.map((link) => (
               <a
                 key={link.name}

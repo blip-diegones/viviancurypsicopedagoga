@@ -8,8 +8,7 @@ import {
   Users,
   ChevronRight,
   Share2,
-  Sparkles,
-  ExternalLink
+  Sparkles
 } from 'lucide-react';
 
 export default function Linktree() {
@@ -37,51 +36,45 @@ export default function Linktree() {
       subtitle: 'WhatsApp Community • Free to join',
       href: 'https://chat.whatsapp.com/HTGgyqi4yfwH9Yjp9ACD5t',
       icon: Users,
-      iconBg: '#E8F5E9',
-      iconColor: '#2E7D32',
-      highlight: true
+      iconBg: '#EAF4EF',
+      iconColor: '#245E44',
+      badge: 'Comunidade Gratuita'
     },
     {
       id: 'contato-whatsapp',
       title: 'Entre em contato',
-      subtitle: 'Fale comigo no WhatsApp: (35) 98881-8829',
-      href: 'https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Vim+pelo+Linktree+e+gostaria+de+informa%C3%A7%C3%B5es+sobre+atendimentos+psicopedag%C3%B3gicos.',
+      subtitle: 'WhatsApp Oficial: (35) 98881-8829',
+      href: 'https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Vim+pelo+Linktree+e+gostaria+de+informa%C3%A7%C3%B5es+sobre+os+atendimentos.',
       icon: MessageCircle,
-      iconBg: '#E8F5E9',
-      iconColor: '#25D366',
-      highlight: false
+      iconBg: '#EBF7EE',
+      iconColor: '#25D366'
     },
     {
       id: 'instagram-dicas',
       title: 'Me siga para melhores dicas',
-      subtitle: 'Vídeos e orientações no Instagram @vivianpsicopedagoga',
+      subtitle: 'Conteúdos práticos no Instagram @vivianpsicopedagoga',
       href: 'https://www.instagram.com/vivianpsicopedagoga/',
       icon: Instagram,
-      iconBg: '#FCE4EC',
-      iconColor: '#D81B60',
-      highlight: false,
-      avatarImg: '/vivian_profile.jpg'
+      iconBg: '#FDF0F4',
+      iconColor: '#B84768'
     },
     {
       id: 'conecte-comigo',
       title: 'Conecte comigo',
-      subtitle: 'Acompanhe novidades, projetos e oficinas',
+      subtitle: 'Acompanhe novidades, vivências e projetos',
       href: 'https://www.instagram.com/vivianpsicopedagoga/',
       icon: Sparkles,
-      iconBg: '#FFF3E0',
-      iconColor: '#FB8C00',
-      highlight: false,
-      avatarImg: '/vivian_profile.jpg'
+      iconBg: '#FDF4EC',
+      iconColor: '#C87A38'
     },
     {
       id: 'site-oficial',
       title: 'Conhecer Site Oficial Completo',
-      subtitle: 'Serviços, metodologia e 12 avaliações 5 estrelas',
+      subtitle: 'Atendimentos, metodologia e avaliações 5 estrelas',
       to: '/',
       icon: Globe,
-      iconBg: '#EDE7F6',
-      iconColor: '#5C1A4A',
-      highlight: false
+      iconBg: '#F4EFEA',
+      iconColor: '#3B162F'
     }
   ];
 
@@ -89,90 +82,69 @@ export default function Linktree() {
     <div
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(180deg, #4A153B 0%, #2D0A24 100%)',
-        color: '#FFFFFF',
+        backgroundColor: 'var(--bg-canvas)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '3rem 1.25rem 3rem 1.25rem',
+        padding: '3rem 1.25rem 3.5rem 1.25rem',
         position: 'relative'
       }}
     >
-      {/* Decorative grid pattern overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
-          `,
-          backgroundSize: '32px 32px',
-          pointerEvents: 'none'
-        }}
-      />
-
-      {/* Container */}
       <div
         style={{
           width: '100%',
           maxWidth: '480px',
-          position: 'relative',
-          zIndex: 1,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center'
         }}
       >
-        {/* Top bar with Share Button */}
+        {/* Top bar with Share */}
         <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
           <button
             onClick={handleShare}
-            aria-label="Compartilhar página de links"
+            aria-label="Compartilhar"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.4rem',
-              padding: '0.5rem 0.9rem',
-              backgroundColor: 'rgba(255, 255, 255, 0.12)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              padding: '0.45rem 0.9rem',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid var(--border-line)',
               borderRadius: 'var(--radius-full)',
-              color: '#FFFFFF',
+              color: 'var(--text-muted)',
               fontSize: '0.82rem',
               fontWeight: 500,
-              backdropFilter: 'blur(8px)',
-              transition: 'var(--transition-smooth)'
+              boxShadow: '0 2px 8px rgba(43, 18, 34, 0.04)',
+              transition: 'var(--transition-gentle)'
             }}
           >
-            <Share2 size={14} />
+            <Share2 size={13} />
             <span>Compartilhar</span>
           </button>
         </div>
 
         {/* Profile Header */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
-          style={{ textAlign: 'center', marginBottom: '2.2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          style={{ textAlign: 'center', marginBottom: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
-          {/* Avatar Photo */}
+          {/* Avatar com Foto Real da Vivian */}
           <div
             style={{
-              width: '104px',
-              height: '104px',
+              width: '110px',
+              height: '110px',
               borderRadius: 'var(--radius-full)',
               overflow: 'hidden',
-              border: '3px solid rgba(255, 255, 255, 0.85)',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-              marginBottom: '1.1rem'
+              border: '3px solid #FFFFFF',
+              boxShadow: '0 12px 28px rgba(43, 18, 34, 0.12)',
+              marginBottom: '1.25rem'
             }}
           >
             <img
-              src="/vivian_profile.jpg"
+              src="/vivian_real.jpg"
               alt="Vivian Cury — Psicopedagoga"
               style={{
                 width: '100%',
@@ -185,11 +157,12 @@ export default function Linktree() {
 
           <h1
             style={{
-              fontSize: '1.6rem',
-              color: '#FFFFFF',
-              fontWeight: 700,
-              letterSpacing: '-0.02em',
-              marginBottom: '0.65rem'
+              fontFamily: 'var(--font-title)',
+              fontSize: '1.75rem',
+              color: 'var(--text-title)',
+              fontWeight: 600,
+              marginBottom: '0.65rem',
+              lineHeight: 1.2
             }}
           >
             Vivian Cury
@@ -198,9 +171,9 @@ export default function Linktree() {
           <p
             style={{
               fontSize: '0.94rem',
-              color: 'rgba(255, 255, 255, 0.88)',
-              maxWidth: '420px',
-              lineHeight: 1.55,
+              color: 'var(--text-body)',
+              maxWidth: '400px',
+              lineHeight: 1.6,
               fontWeight: 400
             }}
           >
@@ -208,7 +181,7 @@ export default function Linktree() {
           </p>
         </motion.div>
 
-        {/* Action Links List */}
+        {/* Action Links */}
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '0.95rem', marginBottom: '2.5rem' }}>
           {links.map((item, index) => {
             const Icon = item.icon;
@@ -220,75 +193,74 @@ export default function Linktree() {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   width: '100%',
-                  padding: '1.05rem 1.25rem',
-                  backgroundColor: '#FFF4E8',
-                  color: '#3A1030',
+                  padding: '1.1rem 1.35rem',
+                  backgroundColor: '#FFFFFF',
+                  color: 'var(--text-title)',
                   borderRadius: 'var(--radius-md)',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.15)',
-                  transition: 'var(--transition-smooth)',
-                  border: '1px solid rgba(255, 255, 255, 0.6)'
+                  border: '1px solid var(--border-line)',
+                  boxShadow: '0 4px 14px rgba(43, 18, 34, 0.04)',
+                  transition: 'var(--transition-gentle)'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.95rem' }}>
-                  {item.avatarImg ? (
-                    <div
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: 'var(--radius-sm)',
-                        overflow: 'hidden',
-                        flexShrink: 0,
-                        border: '1px solid rgba(0,0,0,0.1)'
-                      }}
-                    >
-                      <img
-                        src={item.avatarImg}
-                        alt=""
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: 'var(--radius-sm)',
-                        backgroundColor: item.iconBg,
-                        color: item.iconColor,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}
-                    >
-                      <Icon size={22} />
-                    </div>
-                  )}
+                  <div
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-sm)',
+                      backgroundColor: item.iconBg,
+                      color: item.iconColor,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0
+                    }}
+                  >
+                    <Icon size={20} />
+                  </div>
 
                   <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontSize: '1.02rem', fontWeight: 700, color: '#3A1030', lineHeight: 1.25 }}>
-                      {item.title}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '0.98rem', fontWeight: 600, color: 'var(--text-title)' }}>
+                        {item.title}
+                      </span>
+                      {item.badge && (
+                        <span
+                          style={{
+                            fontSize: '0.66rem',
+                            fontWeight: 700,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.04em',
+                            backgroundColor: 'var(--color-warm)',
+                            color: '#FFFFFF',
+                            padding: '0.15rem 0.45rem',
+                            borderRadius: 'var(--radius-full)'
+                          }}
+                        >
+                          {item.badge}
+                        </span>
+                      )}
                     </div>
                     {item.subtitle && (
-                      <span style={{ fontSize: '0.78rem', color: '#7A4A6A', display: 'block', marginTop: '0.15rem' }}>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginTop: '0.15rem' }}>
                         {item.subtitle}
                       </span>
                     )}
                   </div>
                 </div>
 
-                <ChevronRight size={18} color="#7A4A6A" style={{ flexShrink: 0, marginLeft: '0.5rem' }} />
+                <ChevronRight size={17} color="var(--text-muted)" style={{ flexShrink: 0, marginLeft: '0.5rem' }} />
               </div>
             );
 
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                whileHover={{ scale: 1.015, y: -2 }}
+                whileTap={{ scale: 0.985 }}
               >
                 {item.to ? (
                   <Link to={item.to} style={{ textDecoration: 'none', display: 'block' }}>
@@ -305,12 +277,12 @@ export default function Linktree() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: 'center', paddingTop: '1.5rem', width: '100%', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
-          <p style={{ fontSize: '0.86rem', color: 'rgba(255, 255, 255, 0.9)', fontWeight: 600, marginBottom: '0.2rem' }}>
-            Vivian Cury • Psicopedagoga
+        <div style={{ textAlign: 'center', paddingTop: '1.5rem', width: '100%', borderTop: '1px solid var(--border-line)' }}>
+          <p style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', color: 'var(--text-title)', fontWeight: 600, marginBottom: '0.2rem' }}>
+            Vivian Cury
           </p>
-          <p style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.65)' }}>
-            WhatsApp: (35) 98881-8829 • Instagram: @vivianpsicopedagoga
+          <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+            Psicopedagoga • Professora há mais de 20 anos
           </p>
         </div>
 

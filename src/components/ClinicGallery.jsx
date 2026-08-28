@@ -1,82 +1,88 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Smile, Gamepad2, Brain, BookOpen } from 'lucide-react';
 
 export default function ClinicGallery() {
-  const activities = [
+  const photos = [
     {
-      img: '/puzzle_activity.jpg',
-      title: 'Quebra-Cabeças & Foco no Tatame',
-      subtitle: 'Atenção Sustentada & Raciocínio Espacial',
-      desc: 'Atividades no tatame colorido onde a criança exercita paciência, persistência e percepção visual ao montar quebra-cabeças temáticos.',
-      tag: 'Concentração'
+      src: '/foto_quebracabeca.png',
+      alt: 'Atividade com quebra-cabeças no tatame colorido',
+      title: 'Concentração & Percepção Espacial',
+      caption: 'No chão e no tatame, a criança aprende a persistir, organizar estratégias e focar a atenção sem sobrecarga.'
     },
     {
-      img: '/domino_activity.jpg',
-      title: 'Dominó de Animais & Associação',
-      subtitle: 'Consciência Fonológica & Vocabulário',
-      desc: 'Jogos de associação rápida com animais, números e cores que estimulam a linguagem oral e o reconhecimento das letras com diversão.',
-      tag: 'Linguagem'
+      src: '/foto_domino.png',
+      alt: 'Jogo de dominó com cartas e animais educativos',
+      title: 'Linguagem, Associação & Raciocínio',
+      caption: 'Jogos estruturados com animais e números que transformam a alfabetização e a memória operacional em pura diversão.'
     },
     {
-      img: '/math_activity.jpg',
-      title: 'Matemática Lúdica com Tampinhas (D/U)',
-      subtitle: 'Cálculo Concreto & Raciocínio Lógico',
-      desc: 'Prática de soma, subtração e valor posicional (Dezenas e Unidades) de forma tátil e visual, eliminando o medo da matemática.',
-      tag: 'Matemática'
+      src: '/foto_matematica.png',
+      alt: 'Atividade concreta de matemática com tampinhas e quadro Dezena/Unidade',
+      title: 'Matemática Concreta (D/U)',
+      caption: 'Construção tátil de cálculos de soma e valor posicional. A criança visualiza o conceito e supera o medo dos números.'
+    },
+    {
+      src: '/foto_tapacerto.png',
+      alt: 'Vivian Cury com o jogo Tapa Certo para agilidade mental e foco',
+      title: 'Agilidade Mental & Regulação',
+      caption: 'Jogos rápidos como Tapa Certo exercitam a velocidade de processamento, controle inibitório e tolerância à frustração.'
     }
   ];
 
   return (
-    <section id="espaco" className="section-padding" style={{ backgroundColor: 'var(--bg-subtle)' }}>
-      <div className="container">
+    <section id="espaco" className="section-spacious" style={{ backgroundColor: 'var(--bg-subtle)', borderTop: '1px solid var(--border-line)' }}>
+      <div className="container-editorial">
 
-        {/* Section Header */}
-        <div style={{ maxWidth: '680px', margin: '0 auto 3.5rem auto', textAlign: 'center' }}>
-          <div className="badge-pill" style={{ marginBottom: '1rem' }}>
-            <span>Prática Lúdica & Recursos</span>
-          </div>
-          <h2 style={{ fontSize: 'clamp(2rem, 3.8vw, 2.7rem)', color: 'var(--primary-deep)', marginBottom: '1rem' }}>
-            Como as crianças aprendem nas sessões
+        {/* Cabeçalho */}
+        <div style={{ maxWidth: '640px', marginBottom: '3.5rem' }}>
+          <span className="tag-editorial">Prática & Recursos Reais</span>
+          <h2
+            style={{
+              fontSize: 'clamp(2.2rem, 3.8vw, 3rem)',
+              lineHeight: 1.15,
+              color: 'var(--text-title)',
+              marginBottom: '1rem'
+            }}
+          >
+            Um olhar por dentro das sessões
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            Jogos concretos, tatame confortável e desafios sob medida para despertar o amor pelo aprender.
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.08rem' }}>
+            Cada jogo e material no consultório tem uma intencionalidade pedagógica pensada para o ritmo do seu filho.
           </p>
         </div>
 
-        {/* Visual Activities Grid with Photos */}
+        {/* Grade Fotográfica com Cortes Editoriais Nobres */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem',
-            marginBottom: '3rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2.5rem'
           }}
         >
-          {activities.map((item, index) => (
+          {photos.map((photo, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={photo.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.5, delay: index * 0.12 }}
-              className="clean-card"
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                padding: '0',
-                overflow: 'hidden',
-                border: '1px solid var(--border-color)',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: 'var(--shadow-sm)'
-              }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              style={{ display: 'flex', flexDirection: 'column' }}
             >
-              {/* Photo */}
-              <div style={{ height: '220px', width: '100%', overflow: 'hidden', position: 'relative' }}>
+              {/* Foto Real */}
+              <div
+                style={{
+                  width: '100%',
+                  aspectRatio: '4/5',
+                  borderRadius: 'var(--radius-md)',
+                  overflow: 'hidden',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 24px rgba(43, 18, 34, 0.08)',
+                  marginBottom: '1.25rem'
+                }}
+              >
                 <img
-                  src={item.img}
-                  alt={item.title}
+                  src={photo.src}
+                  alt={photo.alt}
                   style={{
                     width: '100%',
                     height: '100%',
@@ -84,61 +90,31 @@ export default function ClinicGallery() {
                     transition: 'transform 0.4s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.transform = 'scale(1.04)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 />
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    right: '1rem',
-                    backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                    backdropFilter: 'blur(6px)',
-                    color: 'var(--primary-plum)',
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    padding: '0.3rem 0.75rem',
-                    borderRadius: 'var(--radius-full)',
-                    boxShadow: 'var(--shadow-sm)'
-                  }}
-                >
-                  {item.tag}
-                </span>
               </div>
 
-              {/* Text info */}
-              <div style={{ padding: '1.75rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.18rem', color: 'var(--primary-deep)', lineHeight: 1.3 }}>
-                  {item.title}
-                </h3>
-                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--primary-rose)', display: 'block', marginBottom: '0.4rem' }}>
-                  {item.subtitle}
-                </span>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
-                  {item.desc}
-                </p>
-              </div>
+              {/* Legenda e Conteúdo */}
+              <h3
+                style={{
+                  fontFamily: 'var(--font-title)',
+                  fontSize: '1.2rem',
+                  color: 'var(--text-title)',
+                  marginBottom: '0.4rem',
+                  fontWeight: 600
+                }}
+              >
+                {photo.title}
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
+                {photo.caption}
+              </p>
             </motion.div>
           ))}
-        </div>
-
-        {/* Motivational Banner */}
-        <div
-          style={{
-            backgroundColor: 'var(--bg-sun-light)',
-            border: '1px solid rgba(224, 135, 58, 0.25)',
-            borderRadius: 'var(--radius-md)',
-            padding: '1.5rem 2rem',
-            textAlign: 'center',
-            color: 'var(--primary-deep)'
-          }}
-        >
-          <span style={{ fontSize: '1.02rem', fontStyle: 'italic', fontWeight: 500 }}>
-            “As crianças adoram vir porque as atividades são em forma de brincadeiras — e o resultado é foco, autonomia e confiança.”
-          </span>
         </div>
 
       </div>

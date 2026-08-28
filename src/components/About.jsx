@@ -1,172 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Award, BookOpen, Heart } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="apresentacao" className="section-padding" style={{ backgroundColor: 'var(--bg-subtle)' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
+    <section id="apresentacao" className="section-spacious" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-line)' }}>
+      <div className="container-editorial">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
 
-          {/* Left Column */}
+          {/* Coluna Visual: Composição com Fotos Reais */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6 }}
           >
-            <div className="badge-pill" style={{ marginBottom: '1.25rem' }}>
-              <span>Sobre a Vivian</span>
-            </div>
-
-            <h2 style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)', color: 'var(--primary-deep)', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-              Uma profissional que une conhecimento, sensibilidade e muito carinho.
-            </h2>
-
-            <p style={{ marginBottom: '1.2rem', fontSize: '1.05rem', color: 'var(--text-body)' }}>
-              <strong>Vivian Cury</strong> é psicopedagoga e professora há mais de 20 anos. Ao longo de duas décadas em sala de aula e consultório, desenvolveu um olhar refinado para identificar onde o aprendizado trava — e como destravar o potencial de cada criança com leveza.
-            </p>
-
-            <p style={{ marginBottom: '1.75rem', fontSize: '1rem', color: 'var(--text-muted)' }}>
-              Nas sessões, as atividades acontecem em forma de jogos e brincadeiras cuidadosamente planejadas. As crianças adoram ir — e as famílias percebem a transformação: mais concentração, mais autonomia e o resgate da alegria de aprender.
-            </p>
-
-            {/* Princípios */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <CheckCircle2 size={19} color="var(--primary-rose)" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: '0.96rem', fontWeight: 500, color: 'var(--text-title)' }}>
-                  Metodologia eficiente, lúdica e estruturada para cada aprendiz.
-                </span>
+            <div style={{ position: 'relative' }}>
+              <div
+                style={{
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  aspectRatio: '4/5',
+                  boxShadow: '0 16px 36px rgba(43, 18, 34, 0.1)'
+                }}
+              >
+                <img
+                  src="/foto_quemsoueu.jpg"
+                  alt="Vivian Cury — Apresentação e história na educação"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <CheckCircle2 size={19} color="var(--primary-rose)" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: '0.96rem', fontWeight: 500, color: 'var(--text-title)' }}>
-                  Parceria constante com a família e alinhamento com a equipe escolar.
-                </span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <CheckCircle2 size={19} color="var(--primary-rose)" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: '0.96rem', fontWeight: 500, color: 'var(--text-title)' }}>
-                  Mais de 20 anos ajudando crianças a superarem desafios e brilharem.
-                </span>
-              </div>
-            </div>
 
-            {/* Quote */}
-            <div
-              style={{
-                borderLeft: '3px solid var(--accent-gold)',
-                paddingLeft: '1.25rem',
-                fontStyle: 'italic',
-                color: 'var(--primary-deep)',
-                fontSize: '1.02rem',
-                lineHeight: 1.6
-              }}
-            >
-              “Cada criança carrega em si um potencial único — nosso papel é criar a ponte com acolhimento e alegria para que ela o descubra.”
+              {/* Detalhe de texto sutil */}
+              <div
+                style={{
+                  marginTop: '1.25rem',
+                  fontFamily: 'var(--font-title)',
+                  fontStyle: 'italic',
+                  color: 'var(--text-muted)',
+                  fontSize: '0.94rem',
+                  lineHeight: 1.5
+                }}
+              >
+                “A criança aprende melhor quando se sente segura, compreendida e respeitada em seu próprio tempo.”
+              </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Professional Card */}
+          {/* Coluna Texto: Biografia Editorial e Autêntica */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="clean-card"
+            <span className="tag-editorial">Sobre a Vivian</span>
+
+            <h2
               style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                padding: '2.5rem 2rem',
-                border: '1px solid var(--border-color)',
-                boxShadow: 'var(--shadow-sm)'
+                fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
+                lineHeight: 1.2,
+                color: 'var(--text-title)',
+                marginBottom: '1.75rem'
               }}
             >
-              {/* Foto + Nome */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', marginBottom: '1.75rem' }}>
-                <div
-                  style={{
-                    width: '82px',
-                    height: '82px',
-                    borderRadius: 'var(--radius-full)',
-                    overflow: 'hidden',
-                    flexShrink: 0,
-                    border: '2px solid var(--border-color)',
-                    boxShadow: 'var(--shadow-sm)'
-                  }}
-                >
-                  <img
-                    src="/vivian_profile.jpg"
-                    alt="Vivian Cury — Psicopedagoga"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center top'
-                    }}
-                  />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-deep)', marginBottom: '0.2rem' }}>
-                    Vivian Cury
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--primary-rose)', fontWeight: 600 }}>
-                    Psicopedagoga & Educadora
-                  </p>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                    Professora há mais de 20 anos
-                  </p>
-                </div>
-              </div>
+              Uma trajetória construída com amor pela infância e olhar atento a cada detalhe.
+            </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', gap: '0.85rem' }}>
-                  <Award size={20} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div>
-                    <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary-deep)' }}>
-                      +20 anos em Educação
-                    </h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                      Vasta experiência prática com crianças em fase de alfabetização, infância e desenvolvimento.
-                    </p>
-                  </div>
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.8 }}>
+              <p>
+                Com mais de <strong>20 anos de experiência na educação</strong>, já acompanhei centenas de crianças que chegaram ao consultório inseguras, frustradas com as tarefas escolares ou achando que “não eram inteligentes o suficiente”.
+              </p>
 
-                <div style={{ display: 'flex', gap: '0.85rem' }}>
-                  <BookOpen size={20} color="var(--primary-teal)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div>
-                    <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary-deep)' }}>
-                      Metodologia Inovadora & Lúdica
-                    </h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                      Jogos cognitivos, desafios sensoriais e brincadeiras estruturadas com respaldo pedagógico.
-                    </p>
-                  </div>
-                </div>
+              <p>
+                A verdade é simples: <em>não existe criança que não goste de aprender</em>. O que existe são caminhos que travaram — seja na consciência fonológica da leitura, no raciocínio abstrato dos números, ou na ansiedade gerada pela cobrança.
+              </p>
 
-                <div style={{ display: 'flex', gap: '0.85rem' }}>
-                  <Heart size={20} color="var(--primary-rose)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <div>
-                    <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary-deep)' }}>
-                      Carinho & Sensibilidade
-                    </h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                      Compromisso verdadeiro com a autoestima, segurança emocional e evolução do aprendiz.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p>
+                No meu consultório, o aprendizado ganha vida através de <strong>jogos de raciocínio, quebra-cabeças, desafios manuais e muito afeto</strong>. As crianças descobrem que são capazes — e as famílias encontram alívio e direção.
+              </p>
+            </div>
 
+            <div style={{ marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid var(--border-line)' }}>
               <a
-                href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+conversar+sobre+um+atendimento+psicopedag%C3%B3gico."
+                href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+conversar+com+voc%C3%AA+sobre+o+meu+filho."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ width: '100%', fontSize: '0.95rem' }}
+                className="btn-editorial"
               >
+                <MessageCircle size={18} />
                 <span>Conversar com a Vivian ((35) 98881-8829)</span>
               </a>
             </div>

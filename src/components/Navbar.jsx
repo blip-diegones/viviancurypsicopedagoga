@@ -19,13 +19,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Apresentação', href: '#apresentacao' },
-    { name: 'Especialidades', href: '#especialidades' },
-    { name: 'Nosso Espaço', href: '#espaco' },
-    { name: 'Metodologia', href: '#diferenciais' },
-    { name: 'Depoimentos (⭐ 5.0)', href: '#depoimentos' },
-    { name: 'Localização', href: '#localizacao' },
-    { name: 'Dúvidas', href: '#faq' },
+    { name: 'Sobre a Vivian', href: '#apresentacao' },
+    { name: 'Como Posso Ajudar', href: '#especialidades' },
+    { name: 'Prática & Jogos', href: '#espaco' },
+    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'Dúvidas', href: '#faq' }
   ];
 
   return (
@@ -36,12 +34,12 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: isScrolled ? 'rgba(253, 248, 246, 0.95)' : 'rgba(253, 248, 246, 0.82)',
+        backgroundColor: isScrolled ? 'rgba(250, 247, 244, 0.94)' : 'rgba(250, 247, 244, 0.8)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: isScrolled ? '1px solid var(--border-color)' : '1px solid transparent',
-        transition: 'var(--transition-smooth)',
-        padding: isScrolled ? '0.75rem 0' : '1.1rem 0'
+        borderBottom: isScrolled ? '1px solid var(--border-line)' : '1px solid transparent',
+        transition: 'var(--transition-gentle)',
+        padding: isScrolled ? '0.85rem 0' : '1.25rem 0'
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -52,19 +50,18 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         {!isLinktree && (
-          <nav style={{ display: 'none', alignItems: 'center', gap: '1.8rem' }} className="desktop-nav">
+          <nav style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 style={{
-                  fontSize: '0.94rem',
+                  fontSize: '0.92rem',
                   fontWeight: 500,
                   color: 'var(--text-body)',
-                  transition: 'var(--transition-smooth)',
-                  position: 'relative'
+                  transition: 'var(--transition-gentle)'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-deep)')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-primary)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-body)')}
               >
                 {link.name}
@@ -74,7 +71,7 @@ export default function Navbar() {
         )}
 
         {/* Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           {/* Linktree shortcut */}
           <Link
             to="/links"
@@ -82,34 +79,34 @@ export default function Navbar() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.35rem',
-              fontSize: '0.85rem',
+              fontSize: '0.84rem',
               fontWeight: 600,
-              padding: '0.45rem 0.9rem',
+              padding: '0.45rem 0.95rem',
               borderRadius: 'var(--radius-full)',
-              backgroundColor: isLinktree ? 'var(--primary-deep)' : 'var(--bg-rose-light)',
-              color: isLinktree ? '#FFFFFF' : 'var(--primary-plum)',
-              border: '1px solid rgba(123, 45, 106, 0.15)',
-              transition: 'var(--transition-smooth)'
+              backgroundColor: isLinktree ? 'var(--color-primary)' : 'var(--bg-subtle)',
+              color: isLinktree ? '#FFFFFF' : 'var(--color-primary)',
+              border: '1px solid var(--border-line)',
+              transition: 'var(--transition-gentle)'
             }}
           >
             <span>Bio & Links</span>
-            <ExternalLink size={13} />
+            <ExternalLink size={12} />
           </Link>
 
           {/* WhatsApp CTA Button */}
           <a
-            href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+atendimentos+psicopedag%C3%B3gicos."
+            href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+conversar+sobre+atendimento+psicopedag%C3%B3gico."
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-editorial"
             style={{
-              padding: '0.65rem 1.25rem',
-              fontSize: '0.9rem',
+              padding: '0.65rem 1.35rem',
+              fontSize: '0.88rem',
               display: 'none'
             }}
             id="desktop-whatsapp-cta"
           >
-            <MessageCircle size={17} />
+            <MessageCircle size={16} />
             <span>Falar no WhatsApp</span>
           </a>
 
@@ -117,15 +114,14 @@ export default function Navbar() {
           {!isLinktree && (
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Abrir menu de navegação"
+              aria-label="Abrir menu"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 padding: '0.5rem',
                 borderRadius: 'var(--radius-sm)',
-                color: 'var(--primary-deep)',
-                backgroundColor: 'var(--bg-subtle)'
+                color: 'var(--color-primary)'
               }}
               className="mobile-menu-btn"
             >
@@ -144,9 +140,9 @@ export default function Navbar() {
             left: 0,
             right: 0,
             backgroundColor: 'var(--bg-canvas)',
-            borderBottom: '1px solid var(--border-color)',
+            borderBottom: '1px solid var(--border-line)',
             padding: '1.5rem',
-            boxShadow: 'var(--shadow-lg)',
+            boxShadow: '0 12px 32px rgba(43, 18, 34, 0.1)',
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem',
@@ -158,21 +154,21 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                fontSize: '1.05rem',
-                fontWeight: 600,
+                fontSize: '1rem',
+                fontWeight: 500,
                 color: 'var(--text-title)',
-                padding: '0.6rem 0',
-                borderBottom: '1px solid var(--border-light)'
+                padding: '0.5rem 0',
+                borderBottom: '1px solid var(--border-subtle)'
               }}
             >
               {link.name}
             </a>
           ))}
           <a
-            href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+atendimentos+psicopedag%C3%B3gicos."
+            href="https://wa.me/5535988818829?text=Ol%C3%A1%2C+Vivian%21+Gostaria+de+conversar+sobre+atendimento+psicopedag%C3%B3gico."
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-editorial"
             style={{ marginTop: '0.5rem', width: '100%' }}
           >
             <MessageCircle size={18} />
@@ -181,9 +177,8 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Styles inline for desktop breakpoint query */}
       <style>{`
-        @media (min-width: 960px) {
+        @media (min-width: 900px) {
           .desktop-nav { display: flex !important; }
           #desktop-whatsapp-cta { display: inline-flex !important; }
           .mobile-menu-btn { display: none !important; }
